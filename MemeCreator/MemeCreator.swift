@@ -13,27 +13,28 @@ struct MemeCreator: View, Sendable {
     @State private var memeText = ""
     @State private var textSize = 60.0
     @State private var textColor = Color.white
-    
+
     @FocusState private var isFocused: Bool
-    
+
     var body: some View {
         VStack(alignment: .center) {
             Spacer()
             LoadableImage(imageMetadata: fetcher.currentPanda)
                 .overlay(alignment: .bottom) {
-                TextField("Meme Text",
-                          text: $memeText,
-                          prompt: Text("")
-                )
-                .focused($isFocused)
-                .font(.system(size: textSize, weight: .heavy))
-                .shadow(radius: 10)
-                .foregroundColor(textColor)
-                .padding()
-                .multilineTextAlignment(.center)
-            }
+                    TextField(
+                        "Meme Text",
+                        text: $memeText,
+                        prompt: Text("")
+                    )
+                    .focused($isFocused)
+                    .font(.system(size: textSize, weight: .heavy))
+                    .shadow(radius: 10)
+                    .foregroundColor(textColor)
+                    .padding()
+                    .multilineTextAlignment(.center)
+                }
                 .frame(minHeight: 150)
-            
+
             Spacer()
             
             if !memeText.isEmpty {
@@ -55,8 +56,9 @@ struct MemeCreator: View, Sendable {
                 }
                 .padding(.vertical)
                 .frame(maxWidth: 325)
+                
             }
-            
+
             HStack {
                 Button {
                     if let randomImage = fetcher.imageData.sample.randomElement() {
@@ -73,12 +75,14 @@ struct MemeCreator: View, Sendable {
                 }
                 .buttonStyle(.bordered)
                 .controlSize(.large)
-                
+
                 Button {
                     isFocused = true
                 } label: {
                     VStack {
-                        Image(systemName: "textformat").font(.largeTitle).padding(.bottom, 4)
+                        Image(systemName: "textformat")
+                            .font(.largeTitle)
+                            .padding(.bottom, 4)
                         Text("Add Text")
                     }
                     .frame(maxWidth: 180, maxHeight: .infinity)
