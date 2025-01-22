@@ -9,10 +9,10 @@ import SwiftUI
 
 @main
 struct MemeCreatorApp: App {
-    //MARK: TODO PandaCollectionFetcher()
+    @StateObject private var fetcher = PandaCollectionFetcher()
+    
     var body: some Scene {
         WindowGroup {
-            //MARK: TODO ContentView()
             NavigationStack {
                 //MARK: TODO MemeCreator()
             }
