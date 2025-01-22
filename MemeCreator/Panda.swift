@@ -15,3 +15,7 @@ struct Panda: Codable {
                                     imageURL: URL(string: "https://assets.devpubs.apple.com/playgrounds/_assets/pandas/pandaBuggingOut.jpg"))
     
 }
+
+struct PandaCollection: Codable {
+    var sample: [Panda]
+}
