@@ -14,7 +14,8 @@ struct MemeCreatorApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                //MARK: TODO MemeCreator()
+                MemeCreator()
+                    .environmentObject(fetcher)
             }
         }
     }
