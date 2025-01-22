@@ -11,7 +11,7 @@ import SwiftUI
 struct MemeCreatorApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            //MARK: TODO ContentView()
         }
     }
 }
